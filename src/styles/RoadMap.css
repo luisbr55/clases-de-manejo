@@ -1,0 +1,100 @@
+:root {
+  --color-fondo: #232323;
+  --color-fondo-alt: #2c2c2c;
+  --color-acento: #f5c518;
+  --color-verde: #1f5c3f;
+  --color-texto: #f3f1ea;
+  --color-texto-suave: rgba(243, 241, 234, 0.75);
+}
+
+/* ...tus reglas de .contenedor-principal, .contenedor-texto, .btn, etc. van acá igual que antes... */
+
+/* Mapa de ruta */
+.roadmap-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.roadmap-road {
+  fill: none;
+  stroke: var(--color-fondo-alt);
+  stroke-width: 34;
+  stroke-linecap: round;
+}
+
+.roadmap-lane-line {
+  fill: none;
+  stroke: var(--color-acento);
+  stroke-width: 2.5;
+  stroke-dasharray: 14 12;
+  opacity: 0.85;
+}
+
+.roadmap-point {
+  cursor: pointer;
+}
+
+.roadmap-stem {
+  stroke: var(--color-texto);
+  stroke-opacity: 0.2;
+  stroke-width: 2;
+  transition: stroke-opacity 150ms ease;
+}
+
+.roadmap-sign {
+  fill: var(--color-verde);
+  stroke: var(--color-texto);
+  stroke-width: 1.2;
+  transition: stroke-width 150ms ease;
+}
+
+.roadmap-km {
+  fill: var(--color-acento);
+  font-size: 11px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.roadmap-title {
+  fill: var(--color-texto);
+  font-size: 11px;
+  font-family: "Oswald", sans-serif;
+}
+
+.roadmap-marker {
+  fill: var(--color-acento);
+  transition: r 150ms ease;
+}
+
+.roadmap-tooltip-wrap {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+
+.roadmap-tooltip {
+  background: var(--color-fondo);
+  border: 1px solid var(--color-acento);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-texto);
+}
+
+/* interactividad resuelta en CSS, sin JS */
+.roadmap-point:hover .roadmap-stem {
+  stroke-opacity: 0.5;
+}
+.roadmap-point:hover .roadmap-sign {
+  stroke-width: 2;
+}
+.roadmap-point:hover .roadmap-marker {
+  r: 7;
+}
+.roadmap-point:hover .roadmap-tooltip-wrap {
+  opacity: 1;
+  pointer-events: auto;
+}

@@ -26,34 +26,46 @@ const PATH = `M 20 ${ROAD_Y + 10}
 
 export default function RoadMap() {
   return (
-    <svg
-      viewBox={`0 0 ${WIDTH} 240`}
-      className="roadmap-svg"
-      role="img"
-      aria-label="Ruta de aprendizaje, de la clase teórica al examen"
-    >
-      <path d={PATH} className="roadmap-road" />
-      <path d={PATH} className="roadmap-lane-line" />
+    <>
+      <svg
+        viewBox={`0 0 ${WIDTH} 240`}
+        className="roadmap-svg-desktop"
+        role="img"
+        aria-label="Ruta de aprendizaje, de la clase teórica al examen"
+      >
+        <path d={PATH} className="roadmap-road" />
+        <path d={PATH} className="roadmap-lane-line" />
 
-      {RUTA.map((paso, idx) => {
-        const p = POINTS[idx];
-        return (
-          <g key={paso.km} className="roadmap-point">
-            <line x1={p.x} y1={p.y} x2={p.x} y2={p.y - 55} className="roadmap-stem" />
-            <rect x={p.x - 58} y={p.y - 100} width="116" height="46" rx="4" className="roadmap-sign" />
-            <text x={p.x} y={p.y - 80} textAnchor="middle" className="roadmap-km">
-              {paso.km}
-            </text>
-            <text x={p.x} y={p.y - 64} textAnchor="middle" className="roadmap-title">
-              {paso.titulo.toUpperCase()}
-            </text>
-            <circle cx={p.x} cy={p.y} r="5" className="roadmap-marker" />
-            <foreignObject x={p.x - 90} y={p.y + 14} width="180" height="90" className="roadmap-tooltip-wrap">
-              <div className="roadmap-tooltip">{paso.texto}</div>
-            </foreignObject>
-          </g>
-        );
-      })}
-    </svg>
+        {RUTA.map((paso, idx) => {
+          const p = POINTS[idx];
+          return (
+            <g key={paso.km} className="roadmap-point">
+              <line x1={p.x} y1={p.y} x2={p.x} y2={p.y - 55} className="roadmap-stem" />
+              <rect x={p.x - 65} y={p.y - 104} width="130" height="50" rx="4" className="roadmap-sign" />
+              <text x={p.x} y={p.y - 80} textAnchor="middle" className="roadmap-km">
+                {paso.km}
+              </text>
+              <text x={p.x} y={p.y - 64} textAnchor="middle" className="roadmap-title">
+                {paso.titulo.toUpperCase()}
+              </text>
+              <circle cx={p.x} cy={p.y} r="5" className="roadmap-marker" />
+              <foreignObject x={p.x - 90} y={p.y + 14} width="180" height="90" className="roadmap-tooltip-wrap">
+                <div className="roadmap-tooltip">{paso.texto}</div>
+              </foreignObject>
+            </g>
+          );
+        })}
+      </svg>
+
+      <ol className="roadmap-lista-mobile">
+        {RUTA.map((paso) => (
+          <li key={paso.km}>
+            <span className="roadmap-lista-km">{paso.km}</span>
+            <h3>{paso.titulo}</h3>
+            <p>{paso.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </>
   );
 }

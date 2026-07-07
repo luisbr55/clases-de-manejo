@@ -1,16 +1,5 @@
-:root {
-  --color-fondo: #232323;
-  --color-fondo-alt: #2c2c2c;
-  --color-acento: #f5c518;
-  --color-verde: #1f5c3f;
-  --color-texto: #f3f1ea;
-  --color-texto-suave: rgba(243, 241, 234, 0.75);
-}
-
-/* ...tus reglas de .contenedor-principal, .contenedor-texto, .btn, etc. van acá igual que antes... */
-
 /* Mapa de ruta */
-.roadmap-svg {
+.roadmap-svg-desktop {
   width: 100%;
   height: auto;
   overflow: visible;
@@ -51,14 +40,14 @@
 
 .roadmap-km {
   fill: var(--color-acento);
-  font-size: 8px;
+  font-size: 11px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
 }
 
 .roadmap-title {
   fill: var(--color-texto);
-  font-size: 8px;
+  font-size: 11px;
   font-family: "Oswald", sans-serif;
 }
 
@@ -79,9 +68,66 @@
   border-radius: 4px;
   padding: 8px 10px;
   font-family: "Inter", sans-serif;
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.5;
   color: var(--color-texto);
+}
+
+/* Lista vertical para mobile, oculta por defecto */
+.roadmap-lista-mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .roadmap-svg-desktop {
+    display: none;
+  }
+
+  .roadmap-lista-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    border-left: 2px dashed var(--color-acento);
+  }
+
+  .roadmap-lista-mobile li {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .roadmap-lista-mobile li::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-acento);
+  }
+
+  .roadmap-lista-km {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--color-acento);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .roadmap-lista-mobile h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    color: var(--color-texto);
+    margin: 4px 0 6px;
+  }
+
+  .roadmap-lista-mobile p {
+    color: var(--color-texto-suave);
+    font-size: 40px;
+    line-height: 1.5;
+    margin: 0;
+  }
 }
 
 /* interactividad resuelta en CSS, sin JS */

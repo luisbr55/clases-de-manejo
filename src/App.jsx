@@ -1,5 +1,8 @@
 import "./styles/App.css";
 import RoadMap from "./RoadMap.jsx";
+import Fleet from "./Fleet.jsx";
+import Footer from "./Footer.jsx";
+import Packs from "./Packs.jsx";
 
 function App() {
   return (
@@ -17,7 +20,7 @@ function App() {
         <button className="btn">Reservar mi primera clase</button>
       </div>
 
-      <div className="contenedor-imagen">
+      <div className="contenedor-roadmap">
         <RoadMap />
       </div>
 
@@ -39,6 +42,9 @@ function App() {
           <span className="final-visual-linea"></span>
         </div>
       </div>
+      <Fleet />
+      <Packs/>
+      <Footer />
     </div>
   );
 }

@@ -1,15 +1,14 @@
 .layout-container {
   position: sticky;
+  top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 7%;
-  padding-top: 22px;
-  background: #232323;
+  background: var(--color-fondo);
   backdrop-filter: blur(10px);
-  border-bottom: 0.5px solid #F3F1EA;
-  
+  border-bottom: 0.5px solid rgba(243, 241, 234, 0.14);
 }
 
 .logo {
@@ -18,7 +17,7 @@
   gap: 12px;
 
   & h1 {
-    color: #f5c518;
+    color: var(--color-acento);
     font-size: 1.8rem;
     font-weight: 700;
   }
@@ -26,10 +25,11 @@
 
 nav {
   display: flex;
+  align-items: center;
   gap: 30px;
 
   & a {
-    color: #F3F1EA;
+    color: var(--color-texto);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -43,12 +43,12 @@ nav {
     bottom: -6px;
     width: 0%;
     height: 2px;
-    background: #facc15;
+    background: var(--color-acento);
     transition: 0.3s;
   }
 
   & a:hover {
-    color: #F5C518;
+    color: var(--color-acento);
   }
 
   & a:hover::after {
@@ -57,8 +57,8 @@ nav {
 }
 
 .btn {
-  background: #facc15;
-  color: #111827;
+  background: var(--color-acento);
+  color: var(--color-fondo);
   border: none;
   padding: 12px 22px;
   border-radius: 999px;
@@ -69,6 +69,70 @@ nav {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(250, 204, 21, 0.35);
-  color: #f3F1EA;
+  box-shadow: 0 8px 18px rgba(245, 197, 24, 0.35);
+  color: var(--color-texto);
+}
+
+/* el botón dentro del nav (mobile) arranca oculto */
+.btn-mobile {
+  display: none;
+}
+
+/* hamburguesa: oculto en desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background: var(--color-texto);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 22px;
+    padding: 28px 0;
+    background: var(--color-fondo);
+    border-bottom: 0.5px solid rgba(243, 241, 234, 0.14);
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  nav.nav-abierto {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .btn-desktop {
+    display: none;
+  }
+
+  .btn-mobile {
+    display: inline-block;
+    align-self: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
 }

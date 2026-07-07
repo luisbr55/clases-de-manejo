@@ -3,10 +3,12 @@ import RoadMap from "./RoadMap.jsx";
 import Fleet from "./Fleet.jsx";
 import Footer from "./Footer.jsx";
 import Packs from "./Packs.jsx";
+import Layout from "./Layout.jsx";
 
 function App() {
   return (
     <div className="contenedor-principal">
+        <Layout />
       <div className="contenedor-texto">
         <h3>Escuela de manejo · San José</h3>
 

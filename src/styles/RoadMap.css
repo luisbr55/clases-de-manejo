@@ -124,7 +124,7 @@
 
   .roadmap-lista-mobile p {
     color: var(--color-texto-suave);
-    font-size: 40px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0;
   }

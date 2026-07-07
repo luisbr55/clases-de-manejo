@@ -4,6 +4,7 @@ import "./styles/Layout.css";
 export default function Layout() {
   const [abierto, setAbierto] = useState(false);
 
+
   return (
     <header className="layout-container">
       <div className="logo">
@@ -11,10 +12,10 @@ export default function Layout() {
       </div>
 
       <nav className={abierto ? "nav-abierto" : ""}>
-        <a href="#ruta" onClick={() => setAbierto(false)}>La ruta</a>
+        <a href="/" onClick={() => setAbierto(false)}>La ruta</a>
         <a href="#flota" onClick={() => setAbierto(false)}>Flota</a>
         <a href="#paquetes" onClick={() => setAbierto(false)}>Paquetes</a>
-        <a href="#contacto" onClick={() => setAbierto(false)}>Contacto</a>
+        <a href="/contact" onClick={ () => setAbierto(false)}>Contacto</a>
         <button className="btn btn-mobile">Reservar</button>
       </nav>
 

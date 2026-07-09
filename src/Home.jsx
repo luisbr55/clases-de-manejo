@@ -45,7 +45,7 @@ function Home() {
         </div>
       </div>
       <Fleet />
-      <Packs/>
+      <Packs mostrarLayout={false} mostrarFooter={false} mostrarMetodosPago={false} mostrarFAQ={false}/>
       <Footer />
     </div>
   );

@@ -13,8 +13,8 @@ export default function Layout() {
 
       <nav className={abierto ? "nav-abierto" : ""}>
         <a href="/" onClick={() => setAbierto(false)}>La ruta</a>
-        <a href="#flota" onClick={() => setAbierto(false)}>Flota</a>
-        <a href="#paquetes" onClick={() => setAbierto(false)}>Paquetes</a>
+        <a href="/" onClick={() => setAbierto(false)}>Flota</a>
+        <a href="/packs" onClick={() => setAbierto(false)}>Paquetes</a>
         <a href="/contact" onClick={ () => setAbierto(false)}>Contacto</a>
         <button className="btn btn-mobile">Reservar</button>
       </nav>

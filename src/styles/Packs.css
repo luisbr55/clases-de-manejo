@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 20px;
   padding: 48px 20px;
 
@@ -30,7 +31,9 @@
   border-radius: 6px;
   padding: 28px 24px;
   text-align: left;
-  transition: border-color 200ms ease, transform 200ms ease;
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease;
 
   &:hover {
     border-color: var(--color-acento);
@@ -83,6 +86,122 @@
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 3px;
+}
+
+/*Seccion metodos de pago*/
+
+.metodos-pago {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 12px;
+
+  & h3 {
+    color: var(--color-texto);
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+}
+
+.opciones-pago {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.tarjeta-pago {
+  background-color: var(--color-fondo);
+  border: 1px solid rgba(243, 241, 234, 0.14);
+  border-radius: 6px;
+  padding: 20px 16px;
+  text-align: center;
+
+  & i {
+    font-size: 22px;
+    color: var(--color-acento);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  & .nombre-pago {
+    color: var(--color-texto);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 2px;
+  }
+
+  & .nota-pago {
+    color: var(--color-texto-suave);
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+/*Seccion FAQ*/
+.faq-paquetes {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 12px;
+
+  & h3 {
+    color: var(--color-texto);
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+}
+
+.lista-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-faq {
+  background-color: var(--color-fondo);
+  border: 1px solid rgba(243, 241, 234, 0.14);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pregunta-faq {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px 20px;
+  text-align: left;
+  color: var(--color-texto);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.icono-faq {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--color-acento);
+  transition: transform 200ms ease;
+}
+
+.icono-faq.abierto {
+  transform: rotate(45deg);
+}
+
+.respuesta-faq {
+  color: var(--color-texto-suave);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px 18px;
 }
 
 @media (max-width: 700px) {

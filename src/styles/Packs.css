@@ -5,6 +5,7 @@
   text-align: center;
   gap: 20px;
   padding: 48px 20px;
+  background-color: var(--color-fondo-alt);
 
   & h2 {
     color: var(--color-texto);
@@ -94,7 +95,7 @@
   width: 100%;
   max-width: 1000px;
   margin-top: 12px;
-
+  
   & h3 {
     color: var(--color-texto);
     font-family: "Oswald", sans-serif;

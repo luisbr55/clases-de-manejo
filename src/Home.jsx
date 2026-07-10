@@ -4,6 +4,7 @@ import Fleet from "./Fleet.jsx";
 import Footer from "./Footer.jsx";
 import Packs from "./Packs.jsx";
 import Layout from "./Layout.jsx";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -19,7 +20,9 @@ function Home() {
           certificados por el MOPT. Vos manejás, nosotros nos encargamos de que
           llegues tranquilo al examen.
         </p>
+      <Link to="/contact">
         <button className="btn">Reservar mi primera clase</button>
+      </Link>
       </div>
 
       <div className="contenedor-roadmap">

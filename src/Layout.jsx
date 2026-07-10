@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./styles/Layout.css";
+import { Link } from "react-router-dom";
 
 export default function Layout() {
   const [abierto, setAbierto] = useState(false);
-
 
   return (
     <header className="layout-container">
@@ -12,14 +12,20 @@ export default function Layout() {
       </div>
 
       <nav className={abierto ? "nav-abierto" : ""}>
-        <a href="/" onClick={() => setAbierto(false)}>La ruta</a>
-        <a href="/" onClick={() => setAbierto(false)}>Flota</a>
-        <a href="/packs" onClick={() => setAbierto(false)}>Paquetes</a>
-        <a href="/contact" onClick={ () => setAbierto(false)}>Contacto</a>
-        <button className="btn btn-mobile">Reservar</button>
+        <a href="/" onClick={() => setAbierto(false)}>
+          Inicio
+        </a>
+        <a href="/packs" onClick={() => setAbierto(false)}>
+          Paquetes
+        </a>
+        <a href="/contact" onClick={() => setAbierto(false)}>
+          Contacto
+        </a>
+        <Link to="/contact">
+          <button className="btn btn-mobile">Reservar</button>
+          <button className="btn btn-desktop">Reservar</button>
+        </Link>
       </nav>
-
-      <button className="btn btn-desktop">Reservar</button>
 
       <button
         className="menu-toggle"

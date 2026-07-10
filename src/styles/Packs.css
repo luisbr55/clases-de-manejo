@@ -31,7 +31,7 @@
   border: 1px solid rgba(243, 241, 234, 0.14);
   border-radius: 6px;
   padding: 28px 24px;
-  text-align: left;
+  text-align: center;
   transition:
     border-color 200ms ease,
     transform 200ms ease;
